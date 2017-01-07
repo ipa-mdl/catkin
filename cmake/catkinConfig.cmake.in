@@ -106,7 +106,7 @@ if(catkin_FIND_COMPONENTS)
 
       list_append_unique(catkin_LIBRARY_DIRS ${${component}_LIBRARY_DIRS})
       list(APPEND catkin_EXPORTED_TARGETS ${${component}_EXPORTED_TARGETS})
-      list_append_unique(catkin_DEFINITIONS ${${component}_DEFINITIONS})
+      list_append_keys_from(catkin_DEFINITIONS ${component}_DEFINITIONS)
     endif()
   endforeach()
   list_insert_in_workspace_order(catkin_INCLUDE_DIRS ${catkin_INCLUDE_DIRS})
